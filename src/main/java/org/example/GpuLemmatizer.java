@@ -5,5 +5,5 @@ public class GpuLemmatizer {
         System.loadLibrary("lemmatizer"); // .so or .dll
     }
 
-    public native String[] lemmatize(String[] words);
+    public native long lemmatize(long words);
 }

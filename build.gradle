@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.spark:spark-sql_2.12:3.5.5'
+    implementation 'org.apache.spark:spark-sql_2.13:4.0.0'
     implementation 'org.carrot2:morfologik-stemming:2.1.9'
     implementation 'ua.net.nlp:morfologik-ukrainian-lt:6.5.6'
     implementation 'ai.rapids:cudf:25.02.0'
@@ -23,7 +23,7 @@ dependencies {
     implementation files('libs/jmorphy2-dicts-uk-0.2.3-2.4.1.1.1460299261.jar')
     implementation files('libs/noggit-0.8.jar')
     implementation files('libs/dawg-0.2.3.jar')
-    implementation files('libs/rapids-4-spark_2.12-25.02.1-cuda12.jar')
+    implementation files('libs/rapids-4-spark_2.13-25.04.0.jar')
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

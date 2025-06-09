@@ -33,44 +33,44 @@ public class Main {
 //                System.out.println(word);
 //            }
 
-            GpuLemmatizer lemmatizer = new GpuLemmatizer();
-            String[] lemmatized = lemmatizer.lemmatize(new String[] {
-                    "теплому",     // adjective: masc, dat
-                    "ящірки",      // noun: gen sg
-                    "синього",     // adjective: masc, gen
-                    "українська",  // adjective: fem nom
-                    "ходив",       // verb: masc past
-
-                    // More noun forms
-                    "двері",       // noun: nom pl
-                    "чоловіка",    // noun: gen sg
-                    "жінці",       // noun: dat sg
-                    "вікном",      // noun: ins sg
-                    "містах",      // noun: loc pl
-
-                    // Verb forms
-                    "читала",      // verb: fem past
-                    "пишемо",      // verb: 1pl pres
-                    "розмовляєш",  // verb: 2sg pres
-                    "поїхав",      // verb: masc past
-                    "буду",        // verb: 1sg fut
-
-                    // Adjective/participle/etc.
-                    "старіший",    // comparative
-                    "найбільший",  // superlative
-                    "відомому",    // adjective: masc, loc
-                    "знайдену",     // participle/adjective
-
-                    // Random test cases
-                    "невідоме",    // neuter adjective
-                    "новини",      // noun: pl nom/acc
-                    "книжками",    // noun: ins pl
-                    "допомагаючи", // gerund
-                    "бігатимеш"    // verb: 2sg fut
-            });
-            for (String lemma : lemmatized) {
-                System.out.println(lemma);
-            }
+//            GpuLemmatizer lemmatizer = new GpuLemmatizer();
+//            String[] lemmatized = lemmatizer.lemmatize(new String[] {
+//                    "теплому",     // adjective: masc, dat
+//                    "ящірки",      // noun: gen sg
+//                    "синього",     // adjective: masc, gen
+//                    "українська",  // adjective: fem nom
+//                    "ходив",       // verb: masc past
+//
+//                    // More noun forms
+//                    "двері",       // noun: nom pl
+//                    "чоловіка",    // noun: gen sg
+//                    "жінці",       // noun: dat sg
+//                    "вікном",      // noun: ins sg
+//                    "містах",      // noun: loc pl
+//
+//                    // Verb forms
+//                    "читала",      // verb: fem past
+//                    "пишемо",      // verb: 1pl pres
+//                    "розмовляєш",  // verb: 2sg pres
+//                    "поїхав",      // verb: masc past
+//                    "буду",        // verb: 1sg fut
+//
+//                    // Adjective/participle/etc.
+//                    "старіший",    // comparative
+//                    "найбільший",  // superlative
+//                    "відомому",    // adjective: masc, loc
+//                    "знайдену",     // participle/adjective
+//
+//                    // Random test cases
+//                    "невідоме",    // neuter adjective
+//                    "новини",      // noun: pl nom/acc
+//                    "книжками",    // noun: ins pl
+//                    "допомагаючи", // gerund
+//                    "бігатимеш"    // verb: 2sg fut
+//            });
+//            for (String lemma : lemmatized) {
+//                System.out.println(lemma);
+//            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
