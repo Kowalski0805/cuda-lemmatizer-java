@@ -15,19 +15,63 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-//            URL url = Main.class.getClassLoader().getResource("company/evo/jmorphy2/uk/pymorphy2_dicts");
-//            assert url != null;
-//            MorphAnalyzer analyzer = new MorphAnalyzer.Builder().fileLoader(new JarFileLoader("company/evo/jmorphy2/uk/pymorphy2_dicts")).build();
-//            SimpleTagger tagger = new SimpleTagger(analyzer);
-//
-//            String sentence = "Це речення для аналізу .";
-//            System.out.println(tagger.tag(sentence.split(" ")));
+            URL url = Main.class.getClassLoader().getResource("company/evo/jmorphy2/uk/pymorphy2_dicts");
+            assert url != null;
+            MorphAnalyzer analyzer = new MorphAnalyzer.Builder().fileLoader(new JarFileLoader("company/evo/jmorphy2/uk/pymorphy2_dicts")).build();
+            SimpleTagger tagger = new SimpleTagger(analyzer);
 
-//            System.out.println(Main.class.getClassLoader().getResource("ua/net/nlp/"));
+            String sentence = "Це речення для аналізу .";
+            System.out.println(tagger.tag(sentence.split(" ")));
 
-//            Dictionary dictionary = Dictionary.read(Main.class.getClassLoader().getResource("org/languagetool/resource/uk/ukrainian.dict"));
-//            DictionaryLookup lookup = new DictionaryLookup(dictionary);
+            System.out.println(Main.class.getClassLoader().getResource("ua/net/nlp/"));
 
+            Dictionary dictionary = Dictionary.read(Main.class.getClassLoader().getResource("org/languagetool/resource/uk/ukrainian.dict"));
+            DictionaryLookup lookup = new DictionaryLookup(dictionary);
+
+            String[] words = new String[] {
+                    "теплому",     // adjective: masc, dat
+                    "ящірки",      // noun: gen sg
+                    "синього",     // adjective: masc, gen
+                    "українська",  // adjective: fem nom
+                    "ходив",       // verb: masc past
+
+                    // More noun forms
+                    "двері",       // noun: nom pl
+                    "чоловіка",    // noun: gen sg
+                    "жінці",       // noun: dat sg
+                    "вікном",      // noun: ins sg
+                    "містах",      // noun: loc pl
+
+                    // Verb forms
+                    "читала",      // verb: fem past
+                    "пишемо",      // verb: 1pl pres
+                    "розмовляєш",  // verb: 2sg pres
+                    "поїхав",      // verb: masc past
+                    "буду",        // verb: 1sg fut
+
+                    // Adjective/participle/etc.
+                    "старіший",    // comparative
+                    "найбільший",  // superlative
+                    "відомому",    // adjective: masc, loc
+                    "знайдену",     // participle/adjective
+
+                    // Random test cases
+                    "невідоме",    // neuter adjective
+                    "новини",      // noun: pl nom/acc
+                    "книжками",    // noun: ins pl
+                    "допомагаючи", // gerund
+                    "Бігатимеш",    // verb: 2sg fut
+
+                    "Тернополя",
+                    "тернополя",
+            };
+            for (String w : words) {
+                List<WordData> results = lookup.lookup(w);
+                System.out.println("Word: " + w);
+                for (WordData word : results) {
+                    System.out.println("  " + word);
+                }
+            }
 //            List<WordData> results = lookup.lookup("будинки");
 //            for (WordData word : results) {
 //                System.out.println(word);

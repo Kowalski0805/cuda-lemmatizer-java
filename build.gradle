@@ -23,7 +23,7 @@ dependencies {
     implementation files('libs/jmorphy2-dicts-uk-0.2.3-2.4.1.1.1460299261.jar')
     implementation files('libs/noggit-0.8.jar')
     implementation files('libs/dawg-0.2.3.jar')
-    implementation files('libs/rapids-4-spark_2.13-25.08.0.jar')
+    implementation files('libs/rapids-4-spark_2.13-26.02.1.jar')
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
